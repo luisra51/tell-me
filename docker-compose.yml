@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  tell-me:
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+    ports:
+      - 8081:8081
+    environment:
+      - ENV_HTTP_X_API_KEY=xXXXxx
+      - ENV_TG_CHATID=xXXXxx
+    volumes:
+      - ./:/opt/tell-me

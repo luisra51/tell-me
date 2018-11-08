@@ -18,6 +18,7 @@ Dir["#{File.dirname(__FILE__)}/lib/*.rb"].each { |f| require f }
 before do
   # X-Api-Key
   secret = ENV["ENV_HTTP_X_API_KEY"]
+  puts secret
   puts env["HTTP_X_API_KEY"]
   if env["HTTP_X_API_KEY"] != secret
     if request.path.to_s == '/ok'
@@ -28,12 +29,12 @@ before do
   end
 end
 
-#curl -X POST -H 'Content-Type: application/json' -H 'X-Api-Key: secret' -d '{ "app": "host12.apple.com", "msg": "informa que termine" }' http://localhost:4567/to-tg
+#curl -X POST -H 'Content-Type: application/json' -H 'X-Api-Key: secret' -d '{ "app": "host12.apple.com", "msg": "informa que termine" }' http://localhost:8081/to-tg
 
 
 post '/to-tg' do
   request_params = JSON.parse(request.body.read)
-  chat_id = env["TG_CHATID"]
+  chat_id = ENV["ENV_TG_CHATID"]
   out = to_tg(chat_id, request_params["msg"])
 
   # Add record to forward and reverse zones, via TCP
@@ -41,7 +42,7 @@ post '/to-tg' do
   #status 201
   out.code
 end
-#curl -X POST -H 'Content-Type: application/json' -H 'X-Api-Key: secret' -d '{ "app": "host12.apple.com", "msg": "informa que termine" }' http://localhost:4567/to-slack
+#curl -X POST -H 'Content-Type: application/json' -H 'X-Api-Key: secret' -d '{ "app": "host12.apple.com", "msg": "informa que termine" }' http://localhost:8081/to-slack
 post '/to-slack' do
   request_params = JSON.parse(request.body.read)
   request_params["channel"] = "#general" if request_params["channel"].nil?
