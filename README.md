@@ -14,16 +14,16 @@ Send message within slack or telegram channels
 3.2. Enter the token in the file config.json in the tg section.
 
 ## Install & Run local mode
-$ gitlab clone https://gitlab.com/luisra51/tell-me.git
-$ cd tell-me
-$ bundle install
+  $ gitlab clone https://gitlab.com/luisra51/tell-me.git
+  $ cd tell-me
+  $ bundle install
 
 ## Install & Run docker-compose
-$ gitlab clone https://gitlab.com/luisra51/tell-me.git
-$ cd tell-me
+    $ gitlab clone https://gitlab.com/luisra51/tell-me.git
+    $ cd tell-me
  Edit file docker-compose.yml and change environment section
-$ docker-compose build
-$ docker-compose up -d
+    $ docker-compose build
+    $ docker-compose up -d
 
 
 ## Cases of uses
