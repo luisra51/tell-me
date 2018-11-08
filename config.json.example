@@ -1,0 +1,12 @@
+{
+  "tg":
+    {
+      "url": "api.telegram.org",
+      "tocken": "xxxxxxxxxxxxxxxXXXXXXXXxxxxxxXXXxxxxXXXXxxx"
+    },
+  "slack":
+    {
+      "url": "hooks.slack.com",
+      "tocken": "xxxXXXXxxxxxXXXXxxxXXxxxxXXxxxXXxxXXxxxXXxxxXXX"
+    }
+}
