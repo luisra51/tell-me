@@ -11,4 +11,4 @@ RUN bundle install
 RUN mkdir -p $APP
 WORKDIR $APP
 EXPOSE 8081
-CMD = ruby init.rb
+CMD ruby init.rb
