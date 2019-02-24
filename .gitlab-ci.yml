@@ -10,7 +10,7 @@ job-api:
     - cd /home/gitlab-runner/tell-me
     - docker-compose down
   stage: build
-  script:i
+  script:
     - cd /home/gitlab-runner/tell-me
     - docker-compose build
     - cp /home/gitlab-runner/config.json /home/gitlab-runner/tell-me/
