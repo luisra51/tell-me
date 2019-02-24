@@ -5,5 +5,5 @@ job:
   only:
     - master
   tags:
-    - Bikespot-tellme
+    - bash-bikespot
 
