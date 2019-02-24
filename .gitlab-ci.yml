@@ -1,0 +1,9 @@
+job:
+  script:
+    - pwd
+    - whoami
+  only:
+    - master
+  tags:
+    - Bikespot-tellme
+
