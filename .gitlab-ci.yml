@@ -1,6 +1,13 @@
 job:
+  stage: copy
   script:
-    - pwd
+    - cd ..
+    - cp -rf tell-me  /home/gitlab-runner/
+    - cd /home/gitlab-runner/tell-me
+    - docker-compose down
+  stage: build
+  script:
+    - docker-compose build
     - whoami
   only:
     - master
