@@ -5,7 +5,6 @@ stages:
 Copy app:
   stage: copy
   script:
-    - cd ..
     - cp -rf $(pwd)/*  /home/gitlab-runner/tell-me/
     - cd /home/gitlab-runner/tell-me/
     - docker-compose down
