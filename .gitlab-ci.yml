@@ -1,4 +1,8 @@
-job:
+stages:
+  - copy
+  - build
+
+job-api:
   stage: copy
   script:
     - cd ..
@@ -6,9 +10,10 @@ job:
     - cd /home/gitlab-runner/tell-me
     - docker-compose down
   stage: build
-  script:
+  script:i
+    - cd /home/gitlab-runner/tell-me
     - docker-compose build
-    - whoami
+    - cp /home/gitlab-runner/config.json /home/gitlab-runner/tell-me/
   only:
     - master
   tags:
