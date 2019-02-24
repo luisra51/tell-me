@@ -20,7 +20,7 @@ Build app:
     - cd /home/gitlab-runner/tell-me
     - docker-compose build
     - cp /home/gitlab-runner/config.json /home/gitlab-runner/tell-me/
-    - cp /home/gitlab-runner/docker-compose-tell.yml /home/gitlab-runner/tell-me/
+    - cp /home/gitlab-runner/docker-compose-tell.yml /home/gitlab-runner/tell-me/docker-compose.yml
     - docker-compose up -d
   only:
     - master
