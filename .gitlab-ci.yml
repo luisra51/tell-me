@@ -1,12 +1,22 @@
+stages:
+  - copy
+  - build
 
-copy:
+Copy app:
+  stage: copy
   script:
     - cd ..
-    - cp -rf tell-me  /home/gitlab-runner/
-    - cd /home/gitlab-runner/tell-me
+    - cp -rf $(pwd)/*  /home/gitlab-runner/tell-me/
+    - cd /home/gitlab-runner/tell-me/
     - docker-compose down
+  only:
+    - master
+  tags:
+    - bash-bikespot
 
-build:
+
+Build app:
+  stage: build
   script:
     - cd /home/gitlab-runner/tell-me
     - docker-compose build
@@ -15,4 +25,3 @@ build:
     - master
   tags:
     - bash-bikespot
-
