@@ -1,15 +1,12 @@
-stages:
-  - copy
-  - build
 
-job-api:
-  stage: copy
+copy:
   script:
     - cd ..
     - cp -rf tell-me  /home/gitlab-runner/
     - cd /home/gitlab-runner/tell-me
     - docker-compose down
-  stage: build
+
+build:
   script:
     - cd /home/gitlab-runner/tell-me
     - docker-compose build
