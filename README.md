@@ -17,7 +17,7 @@ Send message within slack or telegram channels
 3.1. See https://core.telegram.org/bots
 3.2. Enter the token in the file config.json in the tg section.
 ```
-  $ gitlab clone https://gitlab.com/luisra51/tell-me.git
+  $ git clone https://gitlab.com/luisra51/tell-me.git
   $ cd tell-me
   $ bundle install
 ```
